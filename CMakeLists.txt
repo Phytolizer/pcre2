@@ -73,8 +73,7 @@ PROJECT(PCRE2 C)
 # Increased minimum to 2.8.0 to support newer add_test features. Set policy
 # CMP0026 to avoid warnings for the use of LOCATION in GET_TARGET_PROPERTY.
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.0)
-CMAKE_POLICY(SET CMP0026 OLD)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12)
 
 SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake) # for FindReadline.cmake
 
@@ -161,8 +160,8 @@ SET(PCRE2_SUPPORT_VALGRIND OFF CACHE BOOL
     "Enable Valgrind support.")
 
 OPTION(PCRE2_SHOW_REPORT     "Show the final configuration report" ON)
-OPTION(PCRE2_BUILD_PCRE2GREP "Build pcre2grep" ON)
-OPTION(PCRE2_BUILD_TESTS     "Build the tests" ON)
+OPTION(PCRE2_BUILD_PCRE2GREP "Build pcre2grep" OFF)
+OPTION(PCRE2_BUILD_TESTS     "Build the tests" OFF)
 
 IF (MINGW)
   OPTION(NON_STANDARD_LIB_PREFIX
